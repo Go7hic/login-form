@@ -238,50 +238,50 @@ DEMO：
 <body>
     <div class="mod">
         <form action="" id="login_form" class="login-form">
-            <div class="avatar">
-             <div class="cabeca">
-                 <div class="orelha-esq orelha"></div>
-                 <div class="orelha-dir orelha"></div>
-                 <div class="olho-esq olhos">
-                     <div class="palpebra"></div>
-                 </div>
-                 <div class="olho-dir olhos">
-                     <div class="palpebra"></div>
-                 </div>
-                 <div class="narina-esq narinas"></div>
-                 <div class="narina-dir narinas"></div>
-                 <div class="dente-esq dentes"></div>
-                 <div class="dente-dir dentes"></div>
-             </div>
-             <div class="bracos" id="bracos">
-                 <div class="mao-esq mao">
-                     <div class="unha"></div>
-                 </div>
-                 <div class="mao-dir mao">
-                     <div class="unha"></div>
-                 </div>
-             </div>
-         </div>
          <input type="email" placeholder="邮箱" >
          <input type="text" id="password" placeholder="密码">
      </form>
  </div>
  <script>
-
+    var template = [
+        '<div class="avatar">',
+        '   <div class="cabeca">',
+        '       <div class="orelha-esq orelha"></div>',
+        '       <div class="orelha-dir orelha"></div>',
+        '       <div class="olho-esq olhos">',
+        '           <div class="palpebra"></div>',
+        '       </div>',
+        '       <div class="olho-dir olhos">',
+        '           <div class="palpebra"></div>',
+        '       </div>',
+        '       <div class="narina-esq narinas"></div>',
+        '       <div class="narina-dir narinas"></div>',
+        '       <div class="dente-esq dentes"></div>',
+        '       <div class="dente-dir dentes"></div>',
+        '   </div>',
+        '   <div class="bracos" id="bracos">',
+        '       <div class="mao-esq mao">',
+        '           <div class="unha"></div>',
+        '       </div>',
+        '       <div class="mao-dir mao">',
+        '           <div class="unha"></div>',
+        '       </div>',
+        '   </div>',
+        '</div>'
+    ].join("");
     var isIE9_ = document.all && !window.atob; //判断 IE9- 浏览器
-
     if (!isIE9_) {
-        var pass = document.querySelector("#password");
-        pass.addEventListener('focus', function(e) {
-            document.querySelector("#bracos").className += " esconder";
-            document.querySelector(".olhos").className += " fechar";
-
-        }, false)
-        pass.addEventListener('blur', function(e) {
-
-            document.querySelector("#bracos").className = document.querySelector("#bracos").className.replace( /(?:^|\s)esconder(?!\S)/g , '' )
-            document.querySelector(".olhos").className = document.querySelector(".olhos").className.replace( /(?:^|\s)fechar(?!\S)/g , '' )
-        }, false)
+       $("#login_form").prepend(template);
+        $("#password").on({
+            "focus": function() {
+                $("#bracos").addClass("esconder");
+                $(".olhos").addClass("fechar");
+            },
+            "focusout": function() {
+                $("#bracos").removeClass("esconder");
+                $(".olhos").removeClass("fechar");
+            }
+        })
     }
 </script>
 </body>
