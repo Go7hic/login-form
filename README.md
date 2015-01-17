@@ -3,7 +3,7 @@
 忘记在哪里看到的这个效果，当时就被这个体验给吸引了，卖的一手好萌啊。如果你也想让你的网站用户体验下可以试试哦。
 
 DEMO：
-<iframe width="100%" height="300" src="http://jsfiddle.net/gothic/vvw5g88q/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+[http://jsfiddle.net/gothic/vvw5g88q/1/embedded/result/](http://jsfiddle.net/gothic/vvw5g88q/1/embedded/result/)
 
 
 ```html
