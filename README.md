@@ -239,7 +239,7 @@ DEMO：
     <div class="mod">
         <form action="" id="login_form" class="login-form">
          <input type="email" placeholder="邮箱" >
-         <input type="text" id="password" placeholder="密码">
+         <input type="password" id="password" placeholder="密码">
      </form>
  </div>
  <script>
